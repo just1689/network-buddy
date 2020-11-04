@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  wsURL: "wss://2vote.captainjustin.space/vote-backend/ws"
 
 };
 
