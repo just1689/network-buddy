@@ -1,0 +1,64 @@
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand">Network Buddy</a>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div style="margin-top:100px">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg">
+          <h1>Operation</h1>
+          <form>
+            <fieldset>
+              <legend>Resolve Hostname</legend>
+              <div class="form-group">
+                <label for="DNInput">Hostname lookup</label>
+                <input [(ngModel)]="domainName" type="text" class="form-control" id="DNInput" name="DNInput"
+                       aria-describedby="" placeholder="">
+              </div>
+              <a (click)="nsLookup()" class="btn btn-dark btn-sm">GO</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </fieldset>
+          </form>
+          <br />
+          <br />
+
+          <form>
+            <fieldset>
+              <legend>TCP Probe</legend>
+              <div class="form-group">
+                <label for="DNInput">TCP Probe</label>
+                <input [(ngModel)]="domainName" type="text" class="form-control" id="DNInput" name="DNInput"
+                       aria-describedby="" placeholder="">
+                <label for="DNPort">TCP Probe</label>
+                <input [(ngModel)]="port" type="text" class="form-control" id="DNPort" name="DNPort"
+                       aria-describedby="" placeholder="">
+              </div>
+              <a (click)="probe()" class="btn btn-dark btn-sm">GO</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </fieldset>
+          </form>
+
+
+        </div>
+        <div class="col-lg">
+          <h1>Feedback</h1>
+          <span *ngIf="loading" class="badge badge-warning">Loading</span>
+          <div *ngIf="error !== ''"><span class="badge badge-danger">Error</span><br />{{error}}</div>
+          <pre>{{result}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
